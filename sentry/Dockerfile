@@ -1,4 +1,4 @@
-FROM python:2.7.10
+FROM python:2.7
 
 # Set up sentry user
 RUN groupadd sentry && useradd --create-home --home-dir /home/sentry -g sentry sentry
@@ -19,7 +19,7 @@ RUN pip install \
     nydus
 
 # Sentry
-ENV SENTRY_VERSION 7.7.4
+ENV SENTRY_VERSION 8.2.3
 RUN pip install sentry==$SENTRY_VERSION
 
 # Set up directories
